@@ -86,10 +86,16 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 
     return within
 
-myInput1 = float(input("Enter Lat1: "))
-myInput2 = float(input("Enter Lon1: "))
-myInput3 = float(input("Enter Lat2: "))
-myInput4 = float(input("Enter Lon2: "))
+# myInput1 = float(input("Enter Lat1: "))
+# myInput2 = float(input("Enter Lon1: "))
+# myInput3 = float(input("Enter Lat2: "))
+# myInput4 = float(input("Enter Lon2: "))
 
-for each in cityreader_stretch(myInput1, myInput2, myInput3, myInput4, cities):
+# for each in cityreader_stretch(myInput1, myInput2, myInput3, myInput4, cities):
+#     print(f"{each.name}: ({each.lat},{each.lon})")
+
+myInput1 = input("Enter Lat1,Lon1: ").split(",")
+myInput2 = input("Enter Lat2,Lon2: ").split(",")
+
+for each in cityreader_stretch(float(myInput1[0]), float(myInput1[1]), float(myInput2[0]), float(myInput2[1]), cities):
     print(f"{each.name}: ({each.lat},{each.lon})")
